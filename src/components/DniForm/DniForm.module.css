@@ -1,0 +1,44 @@
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  margin-right: 5%;
+}
+
+label:last-child {
+  margin-right: 0;
+}
+
+input,
+select {
+  
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+input:last-child,
+select:last-child {
+  margin-bottom: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: #d3d3d3;
+  min-width: 50%;
+  max-width: 60%;
+  margin: auto;
+}
+
+form div {
+  display: flex;
+margin-bottom: 1rem;
+}
+
+section {
+  width: 90%;
+  margin: auto;
+}
