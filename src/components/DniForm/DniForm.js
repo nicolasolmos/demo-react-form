@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import styles from './DniForm.module.css';
+
 import FormInput from '../FormInput/FormInput';
 import { yupResolver } from '@hookform/resolvers/yup';
 import DniSchema from './schema';
 import FormSelect from '../FormSelect/FormSelect';
+
+import './DniForm.base.module.css';
+import './DniForm.sizes.module.css';
 
 const DniForm = (props) => {
   const { handleSubmit, register, formState: { errors } } = useForm({

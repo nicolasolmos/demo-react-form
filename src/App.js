@@ -1,8 +1,8 @@
-import './App.css';
 import DniForm from './components/DniForm/DniForm';
 import nationalities from './nationalities';
 import { useState, useCallback } from 'react';
 import SuccessScreen from './components/SuccessScreen/SuccessScreen';
+import './styles/sizes.module.css'
 
 function App() {
   const [success, setSuccess] = useState(false);
