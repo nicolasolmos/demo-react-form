@@ -1,10 +1,15 @@
-const FormInput = ({ register, fieldName, label }) => {
+const FormInput = ({ register, fieldName, label, type, min }) => {
   return (
     <label>
       <span>{label}</span>
-      <input {...register(fieldName, { required: true })} />
+      <input type={type} {...register(fieldName, { min, required: true })} />
     </label>
   );
+};
+
+FormInput.defaultProps = {
+  type: 'text',
+  min: undefined
 };
 
 export default FormInput;

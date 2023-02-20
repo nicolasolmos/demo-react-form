@@ -1,78 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './DniForm.module.css';
 import FormInput from '../FormInput/FormInput';
+import { yupResolver } from '@hookform/resolvers/yup';
+import DniSchema from './schema';
+import FormSelect from '../FormSelect/FormSelect';
 
 const DniForm = (props) => {
-  const { onSubmit, register, formState: { errors } } = useForm();
+  const { handleSubmit, register, formState: { errors } } = useForm({
+    resolver: yupResolver(DniSchema)
+  });
+
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
+
+  const onSubmit = data => props.onSuccess(data);
+
   return (
     <section>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <FormInput register={register} label="Last Name" fieldName="lastName" />
-          <FormInput register={register} label="Name" fieldName="name" />
-          <FormInput register={register} label="Last Name" fieldName="lastName" />
-          <label>
-            <span>Nationality</span>
-            <select  {...register('nationality', { required: true })}>
-              {props.nationalities.map(nationality => <option key={nationality} value={nationality}>{nationality}</option>)}
-            </select>
-          </label>
+          <FormInput register={register} label="Last Name" fieldName="lastName" errors={errors.lastName} />
+          <FormInput register={register} label="Name" fieldName="name" errors={errors.name} />
+          <FormSelect
+            register={register}
+            options={props.nationalities}
+            label="Nationality"
+            fieldName="nationality"
+          />
         </div>
         <div>
-          <label>
-            <span>Sex</span>
-            <select   {...register('sex', { required: true })} >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </label>
-          <label>
-            <span>Birth Date</span>
-            <input   {...register('birthDate', { required: true })} />
-          </label>
-
-          <label>
-            <span>Document Due Date</span>
-            <input   {...register('documentDueDate', { required: true })} />
-          </label>
+          <FormSelect
+            register={register}
+            options={['Male', 'Female']}
+            label="Sex"
+            fieldName="sex"
+          />
+          <FormInput type="date" register={register} label="Birth Date" fieldName="birthDate" />
+          <FormInput type="date" register={register} label="Document Due Date" fieldName="documentDueDate" />
         </div>
         <div>
-          <label>
-            <span>Issue Date</span>
-            <input   {...register('issueDate', { required: true })} />
-          </label>
-
-          <label>
-            <span>Expedient Number</span>
-            <input   {...register('expedientNumber', { required: true })} />
-
-          </label>
-
-          <label>
-            <span>Office Id</span>
-            <input   {...register('officeId', { required: true })} />
-          </label>
+          <FormInput type="date" register={register} label="Issue Date" fieldName="issueDate" />
+          <FormInput type="number" register={register} min={1} label="Expedient Number" fieldName="expedientNumber" />
+          <FormInput type="number" register={register} min={1} label="Office Id" fieldName="officeId" />
         </div>
         <div>
-          <label>
-            <span>Document Number</span>
-            <input   {...register('documentNumber', { required: true })} />
-          </label>
-          <label>
-            <span>Birth Place</span>
-            <input   {...register('birthPlace', { required: true })} />
-          </label>
-          <label>
-            <span>Address</span>
-            <input   {...register('address', { required: true })} />
-          </label>
+          <FormInput type="number" register={register} min={1} label="Document Number" fieldName="documentNumber" />
+          <FormInput register={register} label="Birth Place" fieldName="birthPlace" />
+          <FormInput register={register} label="Address" fieldName="address" />
         </div>
         <div>
-          <label>
-            <span>CUIL</span>
-            <input   {...register('cuil', { pattern: /\d{2}-\d{1,9}-\d{1}/, required: true })} />
-          </label>
+          <FormInput register={register} min={1} label="CUIL" fieldName="cuil" />
+          <input type='submit' />
         </div>
       </form>
     </section>
