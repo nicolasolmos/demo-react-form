@@ -1,8 +1,10 @@
+import './FormInput.css';
+
 const FormInput = ({ register, fieldName, label, type, min }) => {
   return (
-    <label>
-      <span>{label}</span>
-      <input type={type} {...register(fieldName, { min, required: true })} />
+    <label className="form-input-container">
+      <span className="form-input-label">{label}</span>
+      <input className="form-input-input" type={type} {...register(fieldName, { min, required: true })} />
     </label>
   );
 };

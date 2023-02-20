@@ -6,8 +6,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import DniSchema from './schema';
 import FormSelect from '../FormSelect/FormSelect';
 
-import './DniForm.base.module.css';
-import './DniForm.sizes.module.css';
+import './DniForm.base.css';
+import './DniForm.sizes.css';
 
 const DniForm = (props) => {
   const { handleSubmit, register, formState: { errors } } = useForm({
@@ -21,9 +21,9 @@ const DniForm = (props) => {
   const onSubmit = data => props.onSuccess(data);
 
   return (
-    <section>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+    <section className="dni-form-container">
+      <form className="dni-form" onSubmit={handleSubmit(onSubmit)}>
+        <div className='input-group'>
           <FormInput register={register} label="Last Name" fieldName="lastName" errors={errors.lastName} />
           <FormInput register={register} label="Name" fieldName="name" errors={errors.name} />
           <FormSelect
@@ -33,7 +33,7 @@ const DniForm = (props) => {
             fieldName="nationality"
           />
         </div>
-        <div>
+        <div className='input-group'>
           <FormSelect
             register={register}
             options={['Male', 'Female']}
@@ -43,19 +43,19 @@ const DniForm = (props) => {
           <FormInput type="date" register={register} label="Birth Date" fieldName="birthDate" />
           <FormInput type="date" register={register} label="Document Due Date" fieldName="documentDueDate" />
         </div>
-        <div>
+        <div className='input-group'>
           <FormInput type="date" register={register} label="Issue Date" fieldName="issueDate" />
           <FormInput type="number" register={register} min={1} label="Expedient Number" fieldName="expedientNumber" />
           <FormInput type="number" register={register} min={1} label="Office Id" fieldName="officeId" />
         </div>
-        <div>
+        <div className='input-group'>
           <FormInput type="number" register={register} min={1} label="Document Number" fieldName="documentNumber" />
           <FormInput register={register} label="Birth Place" fieldName="birthPlace" />
           <FormInput register={register} label="Address" fieldName="address" />
         </div>
-        <div>
+        <div className='input-group'>
           <FormInput register={register} min={1} label="CUIL" fieldName="cuil" />
-          <input type='submit' />
+          <input className="submit-button" type='submit' />
         </div>
       </form>
     </section>
