@@ -1,9 +1,10 @@
 import React from 'react';
+import './FormElementErrorMessage.css';
 
 const FormElementErrorMessage = (props) => {
-  if (!props.show) return null;
+  if (!props.message) return null;
 
-  return <i>
+  return <i className='form-element-error-message'>
     {props.message}
   </i>;
 

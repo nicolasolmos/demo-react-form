@@ -19,3 +19,9 @@
     font-size: 1.5rem;
     
 }
+
+.form-input-input--error,
+.form-select-select--error {
+    background-color: #FFCDD2;
+    border: 2px solid #D32F2F;
+}
