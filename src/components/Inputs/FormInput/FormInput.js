@@ -1,4 +1,4 @@
-import './FormInput.css';
+import '../common-styles.css';
 
 const FormInput = ({ register, fieldName, label, type, min }) => {
   return (

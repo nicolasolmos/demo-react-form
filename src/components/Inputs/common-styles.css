@@ -1,0 +1,21 @@
+.form-select-container,
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem;
+    flex-grow: 1;
+}
+
+.form-select-label,
+.form-input-label {
+    margin-bottom: 0.5rem; 
+}
+
+.form-input-input,
+.form-select-select {
+    background-color: #d8d8d8;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    
+}

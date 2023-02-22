@@ -1,0 +1,27 @@
+.footer-main-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-accent);
+    box-shadow: 0px -3px 7px 3px lightgrey;
+}
+
+.footer-main-container address {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.footer-main-container address a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
+.footer-content-container {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: left;
+    width: 60%;
+}

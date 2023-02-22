@@ -1,4 +1,4 @@
-import './FormSelect.css';
+import '../common-styles.css';
 
 const FormSelect = ({ register, fieldName, label, options }) => {
   return (

@@ -1,9 +1,0 @@
-.form-select-container {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
-}
-
-.form-select-label {
-    margin-bottom: 0.5rem;
-}

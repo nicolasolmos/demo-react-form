@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-
-import FormInput from '../FormInput/FormInput';
+import FormInput from '../Inputs/FormInput/FormInput';
 import { yupResolver } from '@hookform/resolvers/yup';
 import DniSchema from './schema';
-import FormSelect from '../FormSelect/FormSelect';
+import FormSelect from '../Inputs/FormSelect/FormSelect';
 
-import './DniForm.base.css';
-import './DniForm.sizes.css';
+import './DniForm.css';
 
 const DniForm = (props) => {
   const { handleSubmit, register, formState: { errors } } = useForm({
@@ -21,7 +19,12 @@ const DniForm = (props) => {
   const onSubmit = data => props.onSuccess(data);
 
   return (
-    <section className="dni-form-container">
+    <section className="dni-form-page">
+      <section className="dni-form-container">
+        <header className="title-container">
+          <h2>Personal Data</h2>
+          <p>Fill the form with your personal data: </p>
+        </header>
       <form className="dni-form" onSubmit={handleSubmit(onSubmit)}>
         <div className='input-group'>
           <FormInput register={register} label="Last Name" fieldName="lastName" errors={errors.lastName} />
@@ -55,9 +58,12 @@ const DniForm = (props) => {
         </div>
         <div className='input-group'>
           <FormInput register={register} min={1} label="CUIL" fieldName="cuil" />
+        </div>
+        <div className="submit-button-container">
           <input className="submit-button" type='submit' />
         </div>
       </form>
+    </section>
     </section>
   );
 

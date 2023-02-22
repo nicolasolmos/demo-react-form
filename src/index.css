@@ -1,6 +1,9 @@
+@import url('./styles/colors.css');
+
 html {
   max-width: 100%;
   margin: 0;
+  background-color: var(--primary-background);
 }
 
 body {

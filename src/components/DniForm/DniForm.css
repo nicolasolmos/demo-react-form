@@ -1,18 +1,43 @@
-.dni-form-container {
+.dni-form-page {
     margin: auto;
     max-width: 100%;
+
 }
 
-.dni-form {
-    margin: auto;
-    max-width: 80%;
+.dni-form-container {
+    background-color: var(--primary-container-background);
+    margin: 5% auto;
     padding: 5%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 10px 5px lightgrey;
 }
 
 .submit-button {
     width: 100%;
+    font-size: 2rem;
+    background-color: var(--primary-accent);
+    box-shadow: 7px 7px 5px 3px lightgrey;
+    border-radius: 7px;
+    color: white;
+    border: none;
+    align-self: flex-end;
+    margin: 2rem auto;
+    padding: 10px;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.title-container {
+    margin-left: 1rem;
+}
+
+.submit-button-container {
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width:320px) {
@@ -20,21 +45,9 @@
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 
     .dni-form-container {
-        margin: auto;
-        max-width: 100%;
-    }
-    
-    .dni-form {
-        margin: auto;
         max-width: 60%;
-        padding: 5%;
-        display: flex;
-        flex-direction: column;
     }
     
-    .submit-button {
-        width: 100%;
-    }
 }
 
 @media (min-width:480px) {
@@ -54,18 +67,13 @@
     .input-group {
         display: flex;
         flex-wrap: wrap;
-        
-        max-width: 80%;
         margin: auto;
+        width: 100%;
+        align-items: center;
     }
-    
-
 }
 
 @media (min-width:700px) {
-    .input-group {
-        max-width: 90%;
-    }
 }
 
 @media (min-width:801px) {
