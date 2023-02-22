@@ -1,0 +1,33 @@
+.success-screen-page {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-background);
+  margin: 2rem auto;
+}
+
+.success-screen-table-container {
+  background-color: var(--primary-container-background);
+  height: 50rem;
+  padding: 5rem;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.success-screen-table {
+  border: 1px solid #AAA;
+  border-collapse: collapse;
+}
+
+.success-screen-table tr:nth-child(odd) {
+  background-color: white;
+}
+
+.success-screen-table th,
+.success-screen-table td {
+  padding: 1rem;
+}
+
+
