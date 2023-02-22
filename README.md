@@ -4,7 +4,7 @@ This repository contains a handmade example of the useForm hook library.
 It simulates a governmental form where the user can input its ID personal data.
 Afte submiting the form, the entered data will be displayed on a success screen.
 
-[Demo Picture](./localhost_3000_.png)
+![image](https://user-images.githubusercontent.com/11999163/220637410-28b1b0bc-ba6d-48b5-a182-8dd8955106d4.png)
 
 ## Available Scripts
 
